@@ -1,6 +1,15 @@
 # Analyzer
 
-Checks if referenced classes really exist.
+Analyzer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and checks if referenced classes really exist. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Analyzer/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
+
+<p align="center">
+<a href="https://styleci.io/repos/98643173"><img src="https://styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
+<a href="https://travis-ci.org/GrahamCampbell/Analyzer"><img src="https://img.shields.io/travis/GrahamCampbell/Analyzer/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Coverage Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Quality Score"></img></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="https://github.com/GrahamCampbell/Analyzer/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Latest Version"></img></a>
+</p>
 
 
 ## Installation
