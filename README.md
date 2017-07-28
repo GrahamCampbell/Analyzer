@@ -5,7 +5,7 @@ Checks if referenced classes really exist.
 
 ## Installation
 
-This version requires [PHP](https://php.net) 7, and supports PHPUnit 6.
+This version requires [PHP](https://php.net) 7, and supports [PHPUnit](https://phpunit.de/) 6.
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
