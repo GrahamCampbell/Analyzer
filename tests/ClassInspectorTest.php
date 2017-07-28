@@ -87,4 +87,13 @@ class ClassInspectorTest extends TestCase
 
         $this->assertSame([], $inspector->references());
     }
+
+    /**
+     * @expectedException InvalidArgumentException
+     * @expectedExceptionMessage The class name must be non-empty.
+     */
+    public function testCanNotInspectEmpty()
+    {
+        $inspector = ClassInspector::inspect('');
+    }
 }
