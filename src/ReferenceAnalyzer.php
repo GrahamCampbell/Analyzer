@@ -13,6 +13,7 @@ namespace GrahamCampbell\Analyzer;
 
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\NameResolver;
+use PhpParser\Parser;
 use PhpParser\ParserFactory;
 
 /**
