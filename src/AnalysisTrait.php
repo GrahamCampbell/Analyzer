@@ -33,23 +33,13 @@ trait AnalysisTrait
     abstract protected function getPaths();
 
     /**
-     * Get the classes to ignore not existing.
-     *
-     * @return string[]
-     */
-    protected function getIgnored()
-    {
-        return [];
-    }
-
-    /**
      * @dataProvider provideFilesToCheck
      */
     public function testReferences(string $file)
     {
         $this->assertTrue(file_exists($file), "Expected {$file} to exist.");
 
-        $ignored = $this->getIgnored();
+        $ignored = method_exists($this, 'getIgnored') ? $this->getIgnored() : [];
 
         foreach ((new ReferenceAnalyzer())->analyze($file) as $class) {
             if (in_array($class, $ignored, true)) {
