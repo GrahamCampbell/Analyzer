@@ -33,8 +33,8 @@ class ReferenceAnalyzerTest extends TestCase
         $this->assertSame([
             'PhpParser\NodeTraverser',
             'PhpParser\NodeVisitor\NameResolver',
+            'PhpParser\Parser',
             'PhpParser\ParserFactory',
-            'GrahamCampbell\Analyzer\Parser',
             'GrahamCampbell\Analyzer\ImportVisitor',
             'GrahamCampbell\Analyzer\NameVisitor',
         ], $refs);
