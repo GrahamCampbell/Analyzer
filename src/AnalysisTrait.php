@@ -23,6 +23,11 @@ use RecursiveIteratorIterator;
  */
 trait AnalysisTrait
 {
+    /**
+     * Get the code paths to analyze.
+     *
+     * @return string[]
+     */
     abstract protected function getPaths();
 
     /**
