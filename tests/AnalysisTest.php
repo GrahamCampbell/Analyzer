@@ -37,4 +37,14 @@ class AnalysisTest extends TestCase
             realpath(__DIR__),
         ];
     }
+
+    /**
+     * Get the classes to ignore not existing.
+     *
+     * @return string[]
+     */
+    protected function getIgnored()
+    {
+        return ['Foo\\Bar'];
+    }
 }

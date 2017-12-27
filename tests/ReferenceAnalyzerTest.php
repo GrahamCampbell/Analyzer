@@ -57,4 +57,11 @@ class ReferenceAnalyzerTest extends TestCase
 
         $this->assertSame([], $refs);
     }
+
+    public function testCanGenerateUsingEgStub()
+    {
+        $refs = (new ReferenceAnalyzer())->analyze(__DIR__.'/stubs/eg.php');
+
+        $this->assertSame(['Foo\\Bar'], $refs);
+    }
 }
