@@ -13,15 +13,14 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Analyzer;
 
+use phpDocumentor\Reflection\DocBlockFactory;
+use phpDocumentor\Reflection\Types\Context;
+use phpDocumentor\Reflection\Types\ContextFactory;
 use PhpParser\Comment\Doc;
 use PhpParser\Node;
 use PhpParser\Node\Name;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\NodeVisitorAbstract;
-use phpDocumentor\Reflection\Types\Context;
-use phpDocumentor\Reflection\Types\ContextFactory;
-use phpDocumentor\Reflection\DocBlock;
-use phpDocumentor\Reflection\DocBlockFactory;
 
 /**
  * This is the doc visitor class.
@@ -38,7 +37,7 @@ class DocVisitor extends NodeVisitorAbstract
     protected $contextFactory;
 
     /**
-     * The phpdoc factory
+     * The phpdoc factory.
      *
      * @var callable
      */
@@ -79,7 +78,7 @@ class DocVisitor extends NodeVisitorAbstract
             return $phpdocInst->create($doc, $context);
         };
 
-        return new DocVisitor($context, $phpdoc);
+        return new self($context, $phpdoc);
     }
 
     /**
@@ -116,7 +115,8 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * @return \PhpParser\Node
      */
-    public function enterNode(Node $node) {
+    public function enterNode(Node $node)
+    {
         if ($node instanceof Namespace_) {
             $this->resetContext($node->name);
         }
