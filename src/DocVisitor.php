@@ -163,7 +163,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * Returns null if not traversed yet.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getDoc()
     {
