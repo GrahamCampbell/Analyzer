@@ -27,9 +27,21 @@ class ImportVisitor extends NodeVisitorAbstract
     /**
      * The recorded imports.
      *
-     * @var string[]
+     * @var string[]|null
      */
-    protected $imports = [];
+    protected $imports;
+
+    /**
+     * Reset the recorded imports.
+     *
+     * @param \PhpParser\Node[] $nodes
+     *
+     * @return void
+     */
+    public function beforeTraverse(array $nodes)
+    {
+        $this->imports = [];
+    }
 
     /**
      * Enter the node and record the import.
@@ -50,7 +62,9 @@ class ImportVisitor extends NodeVisitorAbstract
     /**
      * Get the recorded imports.
      *
-     * @return string[]
+     * Returns null if not traversed yet.
+     *
+     * @return string[]|null
      */
     public function getImports()
     {

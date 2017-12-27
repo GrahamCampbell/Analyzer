@@ -29,9 +29,21 @@ class NameVisitor extends NodeVisitorAbstract
     /**
      * The recorded names.
      *
-     * @var string[]
+     * @var string[]|null
      */
-    protected $names = [];
+    protected $names;
+
+    /**
+     * Reset the recorded names.
+     *
+     * @param \PhpParser\Node[] $nodes
+     *
+     * @return void
+     */
+    public function beforeTraverse(array $nodes)
+    {
+        $this->names = [];
+    }
 
     /**
      * Enter the node and record the name.
@@ -56,7 +68,9 @@ class NameVisitor extends NodeVisitorAbstract
     /**
      * Get the recorded names.
      *
-     * @return string[]
+     * Returns null if not traversed yet.
+     *
+     * @return string[]|null
      */
     public function getNames()
     {
