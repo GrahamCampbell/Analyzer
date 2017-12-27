@@ -33,6 +33,8 @@ trait AnalysisTrait
     abstract protected function getPaths();
 
     /**
+     * Test all class references exist.
+     *
      * @dataProvider provideFilesToCheck
      */
     public function testReferences(string $file)
@@ -50,6 +52,11 @@ trait AnalysisTrait
         }
     }
 
+    /**
+     * Get the files to check.
+     *
+     * @return string[][]
+     */
     public function provideFilesToCheck()
     {
         $iterator = new AppendIterator();
