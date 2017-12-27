@@ -39,6 +39,8 @@ class ReferenceAnalyzerTest extends TestCase
             'PhpParser\ParserFactory',
             'GrahamCampbell\Analyzer\ImportVisitor',
             'GrahamCampbell\Analyzer\NameVisitor',
+            'GrahamCampbell\Analyzer\DocVisitor',
+            'GrahamCampbell\Analyzer\DocProcessor',
         ], $refs);
     }
 

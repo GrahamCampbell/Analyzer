@@ -53,14 +53,21 @@ class ReferenceAnalyzer
      */
     public function analyze(string $path)
     {
+        $contents = (string) file_get_contents($path);
+
         $traverser = new NodeTraverser();
 
         $traverser->addVisitor(new NameResolver());
         $traverser->addVisitor($imports = new ImportVisitor());
         $traverser->addVisitor($names = new NameVisitor());
+        $traverser->addVisitor($docs = DocVisitor::create($contents));
 
-        $traverser->traverse($this->parser->parse((string) file_get_contents($path)));
+        $traverser->traverse($this->parser->parse($contents));
 
-        return array_values(array_unique(array_merge($imports->getImports(), $names->getNames())));
+        return array_values(array_unique(array_merge(
+            $imports->getImports(),
+            $names->getNames(),
+            DocProcessor::process($docs->getDoc())
+        )));
     }
 }

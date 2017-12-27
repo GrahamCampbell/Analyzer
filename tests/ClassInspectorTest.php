@@ -50,7 +50,7 @@ class ClassInspectorTest extends TestCase
         $this->assertFalse($inspector->isTrait());
         $this->assertTrue($inspector->exists());
 
-        $this->assertSame(['PhpParser\NodeVisitor'], $inspector->references());
+        $this->assertSame(['PhpParser\NodeVisitor', 'PhpParser\Node'], $inspector->references());
     }
 
     public function testCanInspectTraits()
