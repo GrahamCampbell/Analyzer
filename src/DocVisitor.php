@@ -163,7 +163,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * Returns null if not traversed yet.
      *
-     * @return string[]|null
+     * @return \PhpParser\Comment\Doc[]|null
      */
     public function getDoc()
     {
