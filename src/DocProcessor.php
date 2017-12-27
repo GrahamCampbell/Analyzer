@@ -83,7 +83,7 @@ class DocProcessor
 
         if (method_exists($tag, 'getArguments') && is_callable([$tag, 'getArguments'])) {
             foreach ($tag->getArguments() as $param) {
-                if (($type = $param['type']) !== null) {
+                if (($type = $param['type'] ?? null) !== null) {
                     $types[] = $type;
                 }
             }
