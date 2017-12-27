@@ -67,7 +67,7 @@ class DocProcessor
     /**
      * Process a tag into types.
      *
-     * @param \phpDocumentor\Reflection\DocBlock\Tags\BaseTag[] $tag
+     * @param \phpDocumentor\Reflection\DocBlock\Tags\BaseTag $tag
      *
      * @return \phpDocumentor\Reflection\Type[]
      */
