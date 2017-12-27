@@ -101,18 +101,30 @@ class ClassInspector
     }
 
     /**
+     * Get the native refector.
+     *
+     * @return \ReflectionClass|null
+     */
+    public function refector()
+    {
+        if (!$this->exists()) {
+            return;
+        }
+
+        return new ReflectionClass($this->class);
+    }
+
+    /**
      * Get the fullyqualified imports and typehints.
      *
      * @return string[]
      */
     public function references()
     {
-        if (!$this->exists()) {
+        if ($refector = $this->refector()) {
+            return (new ReferenceAnalyzer())->analyze($refector->getFileName());
+        } else {
             return [];
         }
-
-        $file = (new ReflectionClass($this->class))->getFileName();
-
-        return (new ReferenceAnalyzer())->analyze($file);
     }
 }
