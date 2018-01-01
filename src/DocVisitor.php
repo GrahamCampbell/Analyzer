@@ -53,7 +53,7 @@ class DocVisitor extends NodeVisitorAbstract
     /**
      * The recorded phpdoc.
      *
-     * @var array|null
+     * @var \phpDocumentor\Reflection\DocBlock[]|null
      */
     protected $doc;
 
@@ -163,7 +163,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * Returns null if not traversed yet.
      *
-     * @return \PhpParser\Comment\Doc[]|null
+     * @return \phpDocumentor\Reflection\DocBlock[]|null
      */
     public function getDoc()
     {
