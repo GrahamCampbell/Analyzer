@@ -1,6 +1,6 @@
 # Analyzer
 
-Analyzer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and checks if referenced classes really exist. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Analyzer/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
+Analyzer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and checks if referenced classes really exist. Feel free to check out the [releases](https://github.com/GrahamCampbell/Analyzer/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
 
 <p align="center">
 <a href="https://styleci.io/repos/98643173"><img src="https://styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
