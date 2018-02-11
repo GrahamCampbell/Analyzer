@@ -14,7 +14,7 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 
 ## Installation
 
-This version requires [PHP](https://php.net) 7, and supports [PHPUnit](https://phpunit.de/) 6.
+This version requires [PHP](https://php.net) 7, and supports [PHPUnit](https://phpunit.de/) 6 or 7.
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
