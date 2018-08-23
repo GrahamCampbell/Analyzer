@@ -8,14 +8,20 @@ matrix:
       env: PARSER_VERSION=^2.0
     - php: 7.0
       env: PARSER_VERSION=^3.0
+    - php: 7.0
+      env: PARSER_VERSION=^4.0
     - php: 7.1
       env: PARSER_VERSION=^2.0
     - php: 7.1
       env: PARSER_VERSION=^3.0
+    - php: 7.1
+      env: PARSER_VERSION=^4.0
     - php: 7.2
       env: PARSER_VERSION=^2.0
     - php: 7.2
       env: PARSER_VERSION=^3.0
+    - php: 7.2
+      env: PARSER_VERSION=^4.0
 
 install:
   - composer require "nikic/php-parser:${PARSER_VERSION}" --no-update -n
