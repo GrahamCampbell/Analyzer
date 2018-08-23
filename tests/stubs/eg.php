@@ -3,9 +3,11 @@
 namespace Foo;
 
 /**
+ * @param array<Baz>
+ *
  * @return Bar[]
  */
-function foo()
+function foo(array $baz)
 {
     //
 }
