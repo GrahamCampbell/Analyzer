@@ -15,6 +15,7 @@ namespace GrahamCampbell\Tests\Analyzer;
 
 use GrahamCampbell\Analyzer\AnalysisTrait;
 use GrahamCampbell\Analyzer\ClassInspector;
+use InvalidArgumentException;
 use PhpParser\NodeTraverserInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -34,6 +35,7 @@ class ClassInspectorTest extends TestCase
         $this->assertSame([
             'GrahamCampbell\Analyzer\AnalysisTrait',
             'GrahamCampbell\Analyzer\ClassInspector',
+            'InvalidArgumentException',
             'PhpParser\NodeTraverserInterface',
             'PHPUnit\Framework\TestCase',
         ], $inspector->references());
@@ -88,12 +90,10 @@ class ClassInspectorTest extends TestCase
         $this->assertSame([], $inspector->references());
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage The class name must be non-empty.
-     */
     public function testCanNotInspectEmpty()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The class name must be non-empty.');
         $inspector = ClassInspector::inspect('');
     }
 }

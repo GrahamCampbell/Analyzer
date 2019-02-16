@@ -70,7 +70,7 @@ trait AnalysisTrait
         });
 
         return array_map(function ($file) {
-            return [$file];
+            return [(string) $file];
         }, iterator_to_array($files));
     }
 }
