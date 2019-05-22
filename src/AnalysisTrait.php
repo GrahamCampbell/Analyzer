@@ -17,6 +17,7 @@ use AppendIterator;
 use CallbackFilterIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use SplFileInfo;
 
 /**
  * This is the analysis trait.
@@ -31,6 +32,18 @@ trait AnalysisTrait
      * @return string[]
      */
     abstract protected function getPaths();
+
+    /**
+     * Determine if the given file should be analyzed.
+     *
+     * @param \SplFileInfo $file
+     *
+     * @return bool
+     */
+    protected function shouldAnalyzeFile(SplFileInfo $file)
+    {
+        return true;
+    }
 
     /**
      * Test all class references exist.
@@ -66,7 +79,7 @@ trait AnalysisTrait
         }
 
         $files = new CallbackFilterIterator($iterator, function ($file) {
-            return $file->getFilename()[0] !== '.' && !$file->isDir();
+            return $file->getFilename()[0] !== '.' && !$file->isDir() && $this->shouldAnalyzeFile($file);
         });
 
         return array_map(function ($file) {
