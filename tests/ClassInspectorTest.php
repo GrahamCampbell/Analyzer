@@ -71,6 +71,7 @@ class ClassInspectorTest extends TestCase
             'CallbackFilterIterator',
             'RecursiveDirectoryIterator',
             'RecursiveIteratorIterator',
+            'SplFileInfo',
             'GrahamCampbell\Analyzer\ReferenceAnalyzer',
             'GrahamCampbell\Analyzer\ClassInspector',
         ], $inspector->references());
