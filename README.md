@@ -1,6 +1,6 @@
 # Analyzer
 
-Analyzer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and checks if referenced classes really exist. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Analyzer/releases), [license](LICENSE), [security policy](.github/SECURITY.md), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
+Analyzer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and checks if referenced classes really exist. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Analyzer/releases), [security policy](https://github.com/GrahamCampbell/Analyzer/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
 <p align="center">
 <a href="https://styleci.io/repos/98643173"><img src="https://styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
@@ -25,7 +25,7 @@ $ composer require graham-campbell/analyzer --dev
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full policy [here](.github/SECURITY.md).
+If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Analyzer/security/policy).
 
 
 ## License
