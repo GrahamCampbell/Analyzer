@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V2.2.1 (30/06/2019)
+
+* Removed commented out code
+
+
 ## V2.2 (22/05/2019)
 
 * Added an easy way to filter out files
