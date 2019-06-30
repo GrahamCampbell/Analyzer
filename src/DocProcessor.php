@@ -101,8 +101,6 @@ class DocProcessor
      */
     private static function processType(Type $type)
     {
-        // TODO type-resolver v1 compat
-        // if ($type instanceof AbstractList) {
         if ($type instanceof Array_) {
             return self::flatmap(function ($t) {
                 return self::processType($t);
