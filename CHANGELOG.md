@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V2.3.0 (23/08/2019)
+
+* Support PHP 7.0 - 7.4 only
+* Support PHP Parser 3.x and 4.x only
+
+
 ## V2.2.1 (30/06/2019)
 
 * Removed commented out code
