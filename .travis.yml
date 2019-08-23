@@ -4,25 +4,16 @@ matrix:
   include:
     - env:
         - PHP_VERSION=7.0
-        - PARSER_VERSION=^2.0
-    - env:
-        - PHP_VERSION=7.0
         - PARSER_VERSION=^3.0
     - env:
         - PHP_VERSION=7.0
         - PARSER_VERSION=^4.0
     - env:
         - PHP_VERSION=7.1
-        - PARSER_VERSION=^2.0
-    - env:
-        - PHP_VERSION=7.1
         - PARSER_VERSION=^3.0
     - env:
         - PHP_VERSION=7.1
         - PARSER_VERSION=^4.0
-    - env:
-        - PHP_VERSION=7.2
-        - PARSER_VERSION=^2.0
     - env:
         - PHP_VERSION=7.2
         - PARSER_VERSION=^3.0
@@ -31,12 +22,15 @@ matrix:
         - PARSER_VERSION=^4.0
     - env:
         - PHP_VERSION=7.3
-        - PARSER_VERSION=^2.0
-    - env:
-        - PHP_VERSION=7.3
         - PARSER_VERSION=^3.0
     - env:
         - PHP_VERSION=7.3
+        - PARSER_VERSION=^4.0
+    - env:
+        - PHP_VERSION=7.4
+        - PARSER_VERSION=^3.0
+    - env:
+        - PHP_VERSION=7.4
         - PARSER_VERSION=^4.0
 
 before_install:
