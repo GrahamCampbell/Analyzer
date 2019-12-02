@@ -1,35 +1,45 @@
-dist: xenial
+dist: bionic
 
 matrix:
   include:
-    - env:
+    - name: PHP 7.0; PHP Parser 3
+      env:
         - PHP_VERSION=7.0
         - PARSER_VERSION=^3.0
-    - env:
+    - name: PHP 7.0; PHP Parser 4
+      env:
         - PHP_VERSION=7.0
         - PARSER_VERSION=^4.0
-    - env:
+    - name: PHP 7.1; PHP Parser 3
+      env:
         - PHP_VERSION=7.1
         - PARSER_VERSION=^3.0
-    - env:
+    - name: PHP 7.1; PHP Parser 4
+      env:
         - PHP_VERSION=7.1
         - PARSER_VERSION=^4.0
-    - env:
+    - name: PHP 7.2; PHP Parser 3
+      env:
         - PHP_VERSION=7.2
         - PARSER_VERSION=^3.0
-    - env:
+    - name: PHP 7.2; PHP Parser 4
+      env:
         - PHP_VERSION=7.2
         - PARSER_VERSION=^4.0
-    - env:
+    - name: PHP 7.3; PHP Parser 3
+      env:
         - PHP_VERSION=7.3
         - PARSER_VERSION=^3.0
-    - env:
+    - name: PHP 7.3; PHP Parser 4
+      env:
         - PHP_VERSION=7.3
         - PARSER_VERSION=^4.0
-    - env:
+    - name: PHP 7.4; PHP Parser 3
+      env:
         - PHP_VERSION=7.4
         - PARSER_VERSION=^3.0
-    - env:
+    - name: PHP 7.4; PHP Parser 4
+      env:
         - PHP_VERSION=7.4
         - PARSER_VERSION=^4.0
 
