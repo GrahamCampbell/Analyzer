@@ -15,6 +15,7 @@ namespace GrahamCampbell\Analyzer;
 
 use phpDocumentor\Reflection\DocBlock\Tags\BaseTag;
 use phpDocumentor\Reflection\Type;
+use phpDocumentor\Reflection\Types\AbstractList;
 use phpDocumentor\Reflection\Types\Array_;
 use phpDocumentor\Reflection\Types\Compound;
 use phpDocumentor\Reflection\Types\Nullable;
@@ -101,7 +102,8 @@ class DocProcessor
      */
     private static function processType(Type $type)
     {
-        if ($type instanceof Array_) {
+        // Array_ retained for BC with phpdocumentor/type-resolver 0.4.*
+        if ($type instanceof AbstractList || $type instanceof Array_) {
             return self::flatmap(function ($t) {
                 return self::processType($t);
             }, [$type->getKeyType(), $type->getValueType()]);

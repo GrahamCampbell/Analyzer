@@ -45,6 +45,6 @@ class AnalysisTest extends TestCase
      */
     protected function getIgnored()
     {
-        return ['Foo\\Bar'];
+        return ['Foo\\Bar', 'phpDocumentor\\Reflection\\Types\\AbstractList'];
     }
 }

@@ -2,50 +2,111 @@ dist: bionic
 
 matrix:
   include:
-    - name: PHP 7.0; PHP Parser 3
+    - name: PHP 7.0; PHP Parser 3; Type Resolver 0.4
       env:
         - PHP_VERSION=7.0
         - PARSER_VERSION=^3.0
-    - name: PHP 7.0; PHP Parser 4
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.0; PHP Parser 3; Type Resolver 0.5
+      env:
+        - PHP_VERSION=7.0
+        - PARSER_VERSION=^3.0
+        - RESOLVER_VESION=0.5.*
+    - name: PHP 7.0; PHP Parser 4; Type Resolver 0.4
       env:
         - PHP_VERSION=7.0
         - PARSER_VERSION=^4.0
-    - name: PHP 7.1; PHP Parser 3
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.0; PHP Parser 4; Type Resolver 0.5
+      env:
+        - PHP_VERSION=7.0
+        - PARSER_VERSION=^4.0
+        - RESOLVER_VESION=0.5.*
+    - name: PHP 7.1; PHP Parser 3; Type Resolver 0.4
       env:
         - PHP_VERSION=7.1
         - PARSER_VERSION=^3.0
-    - name: PHP 7.1; PHP Parser 4
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.1; PHP Parser 3; Type Resolver 1
+      env:
+        - PHP_VERSION=7.1
+        - PARSER_VERSION=^3.0
+        - RESOLVER_VESION=^1.0
+    - name: PHP 7.1; PHP Parser 4; Type Resolver 0.4
       env:
         - PHP_VERSION=7.1
         - PARSER_VERSION=^4.0
-    - name: PHP 7.2; PHP Parser 3
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.1; PHP Parser 4; Type Resolver 1
+      env:
+        - PHP_VERSION=7.1
+        - PARSER_VERSION=^4.0
+        - RESOLVER_VESION=^1.0
+    - name: PHP 7.2; PHP Parser 3; Type Resolver 0.4
       env:
         - PHP_VERSION=7.2
         - PARSER_VERSION=^3.0
-    - name: PHP 7.2; PHP Parser 4
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.2; PHP Parser 3; Type Resolver 1
+      env:
+        - PHP_VERSION=7.2
+        - PARSER_VERSION=^3.0
+        - RESOLVER_VESION=^1.0
+    - name: PHP 7.2; PHP Parser 4; Type Resolver 0.4
       env:
         - PHP_VERSION=7.2
         - PARSER_VERSION=^4.0
-    - name: PHP 7.3; PHP Parser 3
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.2; PHP Parser 4; Type Resolver 1
+      env:
+        - PHP_VERSION=7.2
+        - PARSER_VERSION=^4.0
+        - RESOLVER_VESION=^1.0
+    - name: PHP 7.3; PHP Parser 3; Type Resolver 0.4
       env:
         - PHP_VERSION=7.3
         - PARSER_VERSION=^3.0
-    - name: PHP 7.3; PHP Parser 4
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.3; PHP Parser 3; Type Resolver 1
+      env:
+        - PHP_VERSION=7.3
+        - PARSER_VERSION=^3.0
+        - RESOLVER_VESION=^1.0
+    - name: PHP 7.3; PHP Parser 4; Type Resolver 0.4
       env:
         - PHP_VERSION=7.3
         - PARSER_VERSION=^4.0
-    - name: PHP 7.4; PHP Parser 3
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.3; PHP Parser 4; Type Resolver 1
+      env:
+        - PHP_VERSION=7.3
+        - PARSER_VERSION=^4.0
+        - RESOLVER_VESION=^1.0
+    - name: PHP 7.4; PHP Parser 3; Type Resolver 0.4
       env:
         - PHP_VERSION=7.4
         - PARSER_VERSION=^3.0
-    - name: PHP 7.4; PHP Parser 4
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.4; PHP Parser 3; Type Resolver 1
+      env:
+        - PHP_VERSION=7.4
+        - PARSER_VERSION=^3.0
+        - RESOLVER_VESION=^1.0
+    - name: PHP 7.4; PHP Parser 4; Type Resolver 0.4
       env:
         - PHP_VERSION=7.4
         - PARSER_VERSION=^4.0
+        - RESOLVER_VESION=0.4.*
+    - name: PHP 7.4; PHP Parser 4; Type Resolver 1
+      env:
+        - PHP_VERSION=7.4
+        - PARSER_VERSION=^4.0
+        - RESOLVER_VESION=^1.0
 
 before_install:
   - travis_retry docker pull registry.gitlab.com/grahamcampbell/php:$PHP_VERSION
   - docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION require "nikic/php-parser:${PARSER_VERSION}" --no-update -n
+  - docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION require "phpdocumentor/type-resolver:${RESOLVER_VESION}" --no-update -n
 
 install:
   - travis_retry docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION install --no-suggest --prefer-dist -n -o
