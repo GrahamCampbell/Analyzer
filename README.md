@@ -2,6 +2,8 @@
 
 Analyzer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and checks if referenced classes really exist. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Analyzer/releases), [security policy](https://github.com/GrahamCampbell/Analyzer/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
+![Banner](https://user-images.githubusercontent.com/2829600/71477090-0ea3e100-27e0-11ea-985c-6f0886f30fd9.png)
+
 <p align="center">
 <a href="https://styleci.io/repos/98643173"><img src="https://styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
 <a href="https://travis-ci.org/GrahamCampbell/Analyzer"><img src="https://img.shields.io/travis/GrahamCampbell/Analyzer/master.svg?style=flat-square" alt="Build Status"></img></a>
