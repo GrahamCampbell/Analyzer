@@ -75,7 +75,7 @@ class DocVisitor extends NodeVisitorAbstract
         $phpdocInst = DocBlockFactory::createInstance();
 
         $phpdoc = function (string $doc, Context $context) use ($phpdocInst) {
-            return $phpdocInst->create($doc, $context);
+            return $phpdocInst->create(str_replace('iterable', 'array', $doc), $context);
         };
 
         return new self($context, $phpdoc);
