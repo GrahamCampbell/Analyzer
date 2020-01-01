@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V2.4.1 (01/01/2020)
+
+* Work around type-resolver issue
+
+
 ## V2.4 (20/12/2019)
 
 * Support latest phpdocumentor/type-resolver
