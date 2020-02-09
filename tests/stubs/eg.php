@@ -3,9 +3,12 @@
 namespace Foo;
 
 /**
+ * @param array<Baz>
+ * @param iterable<string>
+ *
  * @return Bar[]
  */
-function foo()
+function foo(array $baz, $strs)
 {
     //
 }

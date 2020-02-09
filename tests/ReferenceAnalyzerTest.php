@@ -62,6 +62,6 @@ class ReferenceAnalyzerTest extends TestCase
     {
         $refs = (new ReferenceAnalyzer())->analyze(__DIR__.'/stubs/eg.php');
 
-        $this->assertSame(['Foo\\Bar'], $refs);
+        $this->assertSame(['Foo\\Baz', 'Foo\\Bar'], $refs);
     }
 }
