@@ -6,7 +6,7 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 
 <p align="center">
 <a href="https://styleci.io/repos/98643173"><img src="https://styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
-<a href="https://travis-ci.org/GrahamCampbell/Analyzer"><img src="https://img.shields.io/travis/GrahamCampbell/Analyzer/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://github.com/GrahamCampbell/Analyzer/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Analyzer/Tests?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Quality Score"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
@@ -16,7 +16,11 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 
 ## Installation
 
+<<<<<<< HEAD
 This version requires [PHP](https://php.net) 7.2-7.4, and supports [PHPUnit](https://phpunit.de/) 8-9.
+=======
+This version requires [PHP](https://php.net) 7.0-7.4, and supports [PHPUnit](https://phpunit.de/) 6-9.
+>>>>>>> 2.4
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
