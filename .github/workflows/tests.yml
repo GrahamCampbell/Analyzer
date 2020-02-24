@@ -1,0 +1,52 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 4 * * 1'
+
+jobs:
+  example:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php: ["7.0", "7.1", "7.2", "7.3", "7.4"]
+        parser: ["3", "4"]
+        resolver: ["0.4", "0.5", "1.0", "1.1"]
+        exclude:
+          - php: "7.0"
+            parser: "3"
+            resolver: "1.0"
+          - php: "7.0"
+            parser: "3"
+            resolver: "1.1"
+          - php: "7.0"
+            parser: "4"
+            resolver: "1.0"
+          - php: "7.0"
+            parser: "4"
+            resolver: "1.1"
+          - php: "7.1"
+            parser: "3"
+            resolver: "1.1"
+          - php: "7.1"
+            parser: "4"
+            resolver: "1.1"
+
+    name: PHP ${{ matrix.php }}; Parser ${{ matrix.parser }}; Resolver ${{ matrix.resolver }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Pull Docker Image
+      run: docker pull registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}
+    - name: Select Versions
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} require "nikic/php-parser:${{ matrix.parser }}.*" "phpdocumentor/type-resolver:${{ matrix.resolver }}.*" --no-update -n
+    - name: Run Composer
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} install --no-suggest --prefer-dist -n -o
+    - name: Run PHPUnit
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} --coverage-clover build/logs/clover.xml
+    - name: Upload Coverage
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint ocular registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} code-coverage:upload --format=php-clover build/logs/clover.xml
