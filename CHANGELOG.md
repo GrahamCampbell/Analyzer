@@ -2,6 +2,13 @@ CHANGE LOG
 ==========
 
 
+## V3.0 (29/02/2020)
+
+* Support PHP 7.2 - 7.4 only
+* Switched to reflection-docblock 5
+* Dropped PHPUnit 7 and below
+
+
 ## V2.4.1 (01/01/2020)
 
 * Work around type-resolver issue
