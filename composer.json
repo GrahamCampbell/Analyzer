@@ -12,7 +12,7 @@
     "require": {
         "php": "^7.2.5",
         "phpdocumentor/reflection-common": "^2.0",
-        "phpdocumentor/reflection-docblock": "^5.0",
+        "phpdocumentor/reflection-docblock": "^5.1",
         "phpdocumentor/type-resolver": "^1.1",
         "nikic/php-parser": "^4.3"
     },
