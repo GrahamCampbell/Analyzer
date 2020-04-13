@@ -7,7 +7,7 @@ on:
     - cron: '0 4 * * 1'
 
 jobs:
-  example:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -45,7 +45,7 @@ jobs:
     - name: Select Versions
       run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} require "nikic/php-parser:${{ matrix.parser }}.*" "phpdocumentor/type-resolver:${{ matrix.resolver }}.*" --no-update -n
     - name: Run Composer
-      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} install --no-suggest --prefer-dist -n -o
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} install --prefer-dist -n -o
     - name: Run PHPUnit
       run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} --coverage-clover build/logs/clover.xml
     - name: Upload Coverage
