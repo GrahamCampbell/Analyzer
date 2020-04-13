@@ -5,7 +5,7 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 ![Banner](https://user-images.githubusercontent.com/2829600/71477090-0ea3e100-27e0-11ea-985c-6f0886f30fd9.png)
 
 <p align="center">
-<a href="https://styleci.io/repos/98643173"><img src="https://styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
+<a href="https://github.styleci.io/repos/98643173"><img src="https://github.styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
 <a href="https://github.com/GrahamCampbell/Analyzer/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Analyzer/Tests?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Quality Score"></img></a>
@@ -35,14 +35,8 @@ If you discover a security vulnerability within this package, please send an ema
 Analyzer is licensed under [The MIT License (MIT)](LICENSE).
 
 
----
+## For Enterprise
 
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/packagist-graham-campbell-analyzer?utm_source=packagist-graham-campbell-analyzer&utm_medium=referral&utm_campaign=readme">Get professional support for Analyzer with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
+Available as part of the Tidelift Subscription
+
+The maintainers of `graham-campbell/analyzer` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-graham-campbell-analyzer?utm_source=packagist-graham-campbell-analyzer&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
