@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V2.4.2 (13/04/2020)
+
+* Updated funding information
+
+
 ## V2.4.1 (01/01/2020)
 
 * Work around type-resolver issue
