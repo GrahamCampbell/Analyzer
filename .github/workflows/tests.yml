@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        php: ["7.0", "7.1", "7.2", "7.3", "7.4"]
+        php: ["7.0", "7.1", "7.2", "7.3", "7.4", "8.0"]
         parser: ["3", "4"]
         resolver: ["0.4", "0.5", "1.0", "1.1"]
         exclude:
@@ -35,6 +35,18 @@ jobs:
           - php: "7.1"
             parser: "4"
             resolver: "1.1"
+          - php: "8.0"
+            parser: "3"
+            resolver: "0.4"
+          - php: "8.0"
+            parser: "3"
+            resolver: "0.5"
+          - php: "8.0"
+            parser: "3"
+            resolver: "1.0"
+          - php: "8.0"
+            parser: "3"
+            resolver: "1.1"
 
     name: PHP ${{ matrix.php }}; Parser ${{ matrix.parser }}; Resolver ${{ matrix.resolver }}
 
@@ -44,8 +56,12 @@ jobs:
       run: docker pull registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}
     - name: Select Versions
       run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} require "nikic/php-parser:${{ matrix.parser }}.*" "phpdocumentor/type-resolver:${{ matrix.resolver }}.*" --no-update -n
-    - name: Run Composer
-      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} install --prefer-dist -n -o
+    - name: Run Composer PHP 7
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} update -n -o
+      if: "matrix.php < 8"
+    - name: Run Composer PHP 8
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} update -n -o --ignore-platform-reqs
+      if: "matrix.php >= 8"
     - name: Run PHPUnit
       run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} --coverage-clover build/logs/clover.xml
     - name: Upload Coverage

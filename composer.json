@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": "^7.0|^8.0",
         "phpdocumentor/reflection-docblock": "^4.2",
         "phpdocumentor/type-resolver": "~0.4|^1.0",
         "nikic/php-parser": "^3.0|^4.0"
@@ -32,13 +32,12 @@
         }
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "platform-check": false
     },
     "extra": {
         "branch-alias": {
             "dev-master": "2.4-dev"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
