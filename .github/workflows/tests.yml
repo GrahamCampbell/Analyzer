@@ -67,5 +67,5 @@ jobs:
       run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}-cli
       if: "matrix.php >= 8"
     - name: Upload Coverage PHP 7
-      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint ocular registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}-cli code-coverage:upload --format=php-clover build/logs/clover.xml
+      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint ocular registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}-base code-coverage:upload --format=php-clover build/logs/clover.xml
       if: "matrix.php < 8"
