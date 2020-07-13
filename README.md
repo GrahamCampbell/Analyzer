@@ -20,7 +20,7 @@ This version requires [PHP](https://php.net) 7.2-8.0, and supports [PHPUnit](htt
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require graham-campbell/analyzer:^2.4 --dev
+$ composer require graham-campbell/analyzer:^3.0 --dev
 ```
 
 
