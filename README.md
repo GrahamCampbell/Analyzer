@@ -5,12 +5,11 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 ![Banner](https://user-images.githubusercontent.com/2829600/71477090-0ea3e100-27e0-11ea-985c-6f0886f30fd9.png)
 
 <p align="center">
+<a href="https://github.com/GrahamCampbell/Analyzer/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Analyzer/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/98643173"><img src="https://github.styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
-<a href="https://github.com/GrahamCampbell/Analyzer/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Analyzer/Tests?style=flat-square" alt="Build Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Coverage Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Analyzer"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Quality Score"></img></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
-<a href="https://github.com/GrahamCampbell/Analyzer/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Analyzer.svg?style=flat-square" alt="Latest Version"></img></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
+<a href="https://packagist.org/packages/graham-campbell/analyzer"><img src="https://img.shields.io/packagist/dt/graham-campbell/analyzer?style=flat-square" alt="Packagist Downloads"></img></a>
+<a href="https://github.com/GrahamCampbell/Analyzer/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Analyzer?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
 
