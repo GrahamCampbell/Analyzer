@@ -67,12 +67,16 @@ class DocProcessor
     /**
      * Process a tag into types.
      *
-     * @param \phpDocumentor\Reflection\DocBlock\Tags\BaseTag $tag
+     * @param \phpDocumentor\Reflection\DocBlock\Tags\BaseTag|\phpDocumentor\Reflection\DocBlock\Tags\InvalidTag $tag
      *
      * @return \phpDocumentor\Reflection\Type[]
      */
-    private static function processTag(BaseTag $tag)
+    private static function processTag(object $tag)
     {
+        if (!$tag instanceof BaseTag) {
+            return [];
+        }
+
         $types = [];
 
         if (method_exists($tag, 'getType') && is_callable([$tag, 'getType'])) {
