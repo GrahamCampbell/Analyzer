@@ -1,12 +1,12 @@
 {
     "name": "graham-campbell/analyzer",
     "description": "Checks if referenced classes really exist.",
-    "keywords": ["testing", "classes", "analysis", "analyzer", "Graham Campbell", "GRahamCampbell"],
+    "keywords": ["testing", "classes", "analysis", "analyzer", "Graham Campbell", "GrahamCampbell"],
     "license": "MIT",
     "authors": [
         {
             "name": "Graham Campbell",
-            "email": "graham@alt-three.com"
+            "email": "hello@gjcampbell.co.uk"
         }
     ],
     "require": {

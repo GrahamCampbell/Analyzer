@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.0.5 (28/08/2021)
+
+* Provisional PHP 8.1 support
+
+
 ## V3.0.4 (07/10/2020)
 
 * Skip over invalid tags
