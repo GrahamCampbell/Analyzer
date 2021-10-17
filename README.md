@@ -5,10 +5,6 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 ![Banner](https://user-images.githubusercontent.com/2829600/71477090-0ea3e100-27e0-11ea-985c-6f0886f30fd9.png)
 
 <p align="center">
-<a href="https://xscode.com/grahamcampbell/Analyzer"><img src="https://xscode.com/assets/promo-banner.svg" alt="Promo Banner"></img></a>
-</p>
-
-<p align="center">
 <a href="https://github.com/GrahamCampbell/Analyzer/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Analyzer/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/98643173"><img src="https://github.styleci.io/repos/98643173/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
@@ -30,7 +26,7 @@ $ composer require "graham-campbell/analyzer:^3.0" --dev
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Analyzer/security/policy).
+If you discover a security vulnerability within this package, please send an email to security@tidelift.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Analyzer/security/policy).
 
 
 ## License
