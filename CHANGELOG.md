@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V3.1 (UPCOMING)
+## V3.1 (07/02/2022)
 
 * Dropped PHP < 7.4
 
