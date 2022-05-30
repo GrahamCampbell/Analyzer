@@ -17,7 +17,7 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 
 This version requires [PHP](https://www.php.net/) 7.4-8.1.
 
-To get the latest version, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
 $ composer require "graham-campbell/analyzer:^3.1" --dev
