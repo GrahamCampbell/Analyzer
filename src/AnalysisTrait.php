@@ -31,7 +31,7 @@ trait AnalysisTrait
      *
      * @return string[]
      */
-    abstract protected static function getPaths();
+    abstract protected static function getPaths(): array;
 
     /**
      * Determine if the given file should be analyzed.
@@ -40,7 +40,7 @@ trait AnalysisTrait
      *
      * @return bool
      */
-    protected static function shouldAnalyzeFile(SplFileInfo $file)
+    protected static function shouldAnalyzeFile(SplFileInfo $file): bool
     {
         return true;
     }
@@ -50,7 +50,7 @@ trait AnalysisTrait
      *
      * @dataProvider provideFilesToCheck
      */
-    public function testReferences(string $file)
+    public function testReferences(string $file): void
     {
         $this->assertTrue(file_exists($file), "Expected {$file} to exist.");
 
@@ -70,7 +70,7 @@ trait AnalysisTrait
      *
      * @return string[][]
      */
-    public static function provideFilesToCheck()
+    public static function provideFilesToCheck(): array
     {
         $iterator = new AppendIterator();
 

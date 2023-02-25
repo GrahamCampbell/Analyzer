@@ -39,7 +39,7 @@ class ClassInspector
      *
      * @return static
      */
-    public static function inspect(string $class)
+    public static function inspect(string $class): self
     {
         if (!$class) {
             throw new InvalidArgumentException('The class name must be non-empty.');
@@ -65,7 +65,7 @@ class ClassInspector
      *
      * @return bool
      */
-    public function isClass()
+    public function isClass(): bool
     {
         return class_exists($this->class);
     }
@@ -75,7 +75,7 @@ class ClassInspector
      *
      * @return bool
      */
-    public function isInterface()
+    public function isInterface(): bool
     {
         return interface_exists($this->class);
     }
@@ -85,7 +85,7 @@ class ClassInspector
      *
      * @return bool
      */
-    public function isTrait()
+    public function isTrait(): bool
     {
         return trait_exists($this->class);
     }
@@ -95,7 +95,7 @@ class ClassInspector
      *
      * @return bool
      */
-    public function exists()
+    public function exists(): bool
     {
         return $this->isClass() || $this->isInterface() || $this->isTrait();
     }
@@ -105,21 +105,21 @@ class ClassInspector
      *
      * @return \ReflectionClass|null
      */
-    public function refector()
+    public function refector(): ?ReflectionClass
     {
         if (!$this->exists()) {
-            return;
+            return null;
         }
 
         return new ReflectionClass($this->class);
     }
 
     /**
-     * Get the fullyqualified imports and typehints.
+     * Get the fully-qualified imports and type-hints.
      *
      * @return string[]
      */
-    public function references()
+    public function references(): array
     {
         if ($refector = $this->refector()) {
             return (new ReferenceAnalyzer())->analyze($refector->getFileName());

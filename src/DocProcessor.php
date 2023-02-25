@@ -36,11 +36,11 @@ class DocProcessor
      *
      * @return string[]
      */
-    public static function process(array $docs)
+    public static function process(array $docs): array
     {
-        return self::flatmap(function ($doc) {
-            return self::flatmap(function ($tag) {
-                return self::flatmap(function ($type) {
+        return self::flatmap(function ($doc): array {
+            return self::flatmap(function ($tag): array {
+                return self::flatmap(function ($type): array {
                     return self::processType($type);
                 }, self::processTag($tag));
             }, $doc->getTags());
@@ -55,7 +55,7 @@ class DocProcessor
      *
      * @return array
      */
-    private static function flatmap(callable $fn, array $array)
+    private static function flatmap(callable $fn, array $array): array
     {
         if (empty($array)) {
             return [];
@@ -71,7 +71,7 @@ class DocProcessor
      *
      * @return \phpDocumentor\Reflection\Type[]
      */
-    private static function processTag(object $tag)
+    private static function processTag(object $tag): array
     {
         if (!$tag instanceof BaseTag) {
             return [];
@@ -103,7 +103,7 @@ class DocProcessor
      *
      * @return string[]
      */
-    private static function processType(Type $type)
+    private static function processType(Type $type): array
     {
         if ($type instanceof AbstractList) {
             return self::flatmap(function ($t) {

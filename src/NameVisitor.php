@@ -40,7 +40,7 @@ class NameVisitor extends NodeVisitorAbstract
      *
      * @return void
      */
-    public function beforeTraverse(array $nodes)
+    public function beforeTraverse(array $nodes): void
     {
         $this->names = [];
     }
@@ -52,7 +52,7 @@ class NameVisitor extends NodeVisitorAbstract
      *
      * @return \PhpParser\Node
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): Node
     {
         if ($node instanceof ConstFetch || $node instanceof FuncCall) {
             $node->name = null;
@@ -72,7 +72,7 @@ class NameVisitor extends NodeVisitorAbstract
      *
      * @return string[]|null
      */
-    public function getNames()
+    public function getNames(): ?array
     {
         return $this->names;
     }

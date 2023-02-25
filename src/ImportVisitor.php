@@ -38,7 +38,7 @@ class ImportVisitor extends NodeVisitorAbstract
      *
      * @return void
      */
-    public function beforeTraverse(array $nodes)
+    public function beforeTraverse(array $nodes): void
     {
         $this->imports = [];
     }
@@ -50,7 +50,7 @@ class ImportVisitor extends NodeVisitorAbstract
      *
      * @return \PhpParser\Node
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): Node
     {
         if ($node instanceof UseUse) {
             $this->imports[] = $node->name->toString();
@@ -66,7 +66,7 @@ class ImportVisitor extends NodeVisitorAbstract
      *
      * @return string[]|null
      */
-    public function getImports()
+    public function getImports(): ?array
     {
         return $this->imports;
     }

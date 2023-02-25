@@ -51,7 +51,7 @@ class ReferenceAnalyzer
      *
      * @return string[]
      */
-    public function analyze(string $path)
+    public function analyze(string $path): array
     {
         $contents = (string) file_get_contents($path);
 

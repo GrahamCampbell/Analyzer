@@ -64,7 +64,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * @return \GrahamCampbell\Analyzer\DocVisitor
      */
-    public static function create(string $contents)
+    public static function create(string $contents): self
     {
         $contextInst = new ContextFactory();
 
@@ -102,7 +102,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * @return void
      */
-    public function beforeTraverse(array $nodes)
+    public function beforeTraverse(array $nodes): void
     {
         $this->resetContext();
         $this->doc = [];
@@ -115,7 +115,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * @return \PhpParser\Node
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): Node
     {
         if ($node instanceof Namespace_) {
             $this->resetContext($node->name);
@@ -133,7 +133,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * @return void
      */
-    protected function resetContext(Name $namespace = null)
+    protected function resetContext(Name $namespace = null): void
     {
         $callable = $this->contextFactory;
 
@@ -147,7 +147,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * @return void
      */
-    protected function recordDoc(array $comments)
+    protected function recordDoc(array $comments): void
     {
         $callable = $this->phpdocFactory;
 
@@ -165,7 +165,7 @@ class DocVisitor extends NodeVisitorAbstract
      *
      * @return \phpDocumentor\Reflection\DocBlock[]|null
      */
-    public function getDoc()
+    public function getDoc(): ?array
     {
         return $this->doc;
     }
