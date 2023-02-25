@@ -31,7 +31,7 @@ trait AnalysisTrait
      *
      * @return string[]
      */
-    abstract static protected function getPaths();
+    abstract protected static function getPaths();
 
     /**
      * Determine if the given file should be analyzed.
