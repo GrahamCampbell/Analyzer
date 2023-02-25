@@ -25,7 +25,7 @@ use phpDocumentor\Reflection\Types\Object_;
  *
  * @author Graham Campbell <hello@gjcampbell.co.uk>
  */
-class DocProcessor
+final class DocProcessor
 {
     /**
      * Process an array of phpdoc.

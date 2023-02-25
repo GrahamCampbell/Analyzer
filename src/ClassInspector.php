@@ -21,14 +21,14 @@ use ReflectionClass;
  *
  * @author Graham Campbell <hello@gjcampbell.co.uk>
  */
-class ClassInspector
+final class ClassInspector
 {
     /**
      * The class name.
      *
      * @var string
      */
-    protected $class;
+    private string $class;
 
     /**
      * Inspect the given class.
@@ -55,7 +55,7 @@ class ClassInspector
      *
      * @return void
      */
-    protected function __construct(string $class)
+    private function __construct(string $class)
     {
         $this->class = $class;
     }

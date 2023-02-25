@@ -24,14 +24,14 @@ use PhpParser\NodeVisitorAbstract;
  *
  * @author Graham Campbell <hello@gjcampbell.co.uk>
  */
-class NameVisitor extends NodeVisitorAbstract
+final class NameVisitor extends NodeVisitorAbstract
 {
     /**
      * The recorded names.
      *
      * @var string[]|null
      */
-    protected $names;
+    private ?array $names = null;
 
     /**
      * Reset the recorded names.

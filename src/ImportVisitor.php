@@ -22,14 +22,14 @@ use PhpParser\NodeVisitorAbstract;
  *
  * @author Graham Campbell <hello@gjcampbell.co.uk>
  */
-class ImportVisitor extends NodeVisitorAbstract
+final class ImportVisitor extends NodeVisitorAbstract
 {
     /**
      * The recorded imports.
      *
      * @var string[]|null
      */
-    protected $imports;
+    private ?array $imports = null;
 
     /**
      * Reset the recorded imports.

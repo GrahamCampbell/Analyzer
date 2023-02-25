@@ -23,14 +23,14 @@ use PhpParser\ParserFactory;
  *
  * @author Graham Campbell <hello@gjcampbell.co.uk>
  */
-class ReferenceAnalyzer
+final class ReferenceAnalyzer
 {
     /**
      * The parser instance.
      *
      * @var \PhpParser\Parser
      */
-    protected $parser;
+    private Parser $parser;
 
     /**
      * Create a new reference analyzer instance.
@@ -45,7 +45,7 @@ class ReferenceAnalyzer
     }
 
     /**
-     * Get the fullyqualified imports and typehints.
+     * Get the fully-qualified imports and type-hints.
      *
      * @param string $path
      *

@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Analyzer;
 
+use Closure;
+use phpDocumentor\Reflection\DocBlock;
 use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\Types\Context;
 use phpDocumentor\Reflection\Types\ContextFactory;
@@ -27,35 +29,35 @@ use PhpParser\NodeVisitorAbstract;
  *
  * @author Graham Campbell <hello@gjcampbell.co.uk>
  */
-class DocVisitor extends NodeVisitorAbstract
+final class DocVisitor extends NodeVisitorAbstract
 {
     /**
      * The context factory.
      *
-     * @var callable
+     * @var \Closure(string): Context
      */
-    protected $contextFactory;
+    private Closure $contextFactory;
 
     /**
      * The phpdoc factory.
      *
-     * @var callable
+     * @var \Closure(string, Context): DocBlock
      */
-    protected $phpdocFactory;
+    private Closure $phpdocFactory;
 
     /**
      * The current context.
      *
      * @var \phpDocumentor\Reflection\Types\Context|null
      */
-    protected $context;
+    private ?Context $context = null;
 
     /**
      * The recorded phpdoc.
      *
      * @var \phpDocumentor\Reflection\DocBlock[]|null
      */
-    protected $doc;
+    private ?array $doc = null;
 
     /**
      * Create a new doc visitor aware of file contents.
@@ -68,13 +70,13 @@ class DocVisitor extends NodeVisitorAbstract
     {
         $contextInst = new ContextFactory();
 
-        $context = function (string $namespace) use ($contents, $contextInst) {
+        $context = function (string $namespace) use ($contents, $contextInst): Context {
             return $contextInst->createForNamespace($namespace, $contents);
         };
 
         $phpdocInst = DocBlockFactory::createInstance();
 
-        $phpdoc = function (string $doc, Context $context) use ($phpdocInst) {
+        $phpdoc = function (string $doc, Context $context) use ($phpdocInst): DocBlock {
             return $phpdocInst->create($doc, $context);
         };
 
@@ -84,12 +86,12 @@ class DocVisitor extends NodeVisitorAbstract
     /**
      * Create a new doc visitor instance.
      *
-     * @param callable $context
-     * @param callable $phpdoc
+     * @param \Closure(string): Context $context
+     * @param \Closure(string, Context): DocBlock $phpdoc
      *
      * @return void
      */
-    public function __construct(callable $context, callable $phpdoc)
+    public function __construct(Closure $context, Closure $phpdoc)
     {
         $this->contextFactory = $context;
         $this->phpdocFactory = $phpdoc;

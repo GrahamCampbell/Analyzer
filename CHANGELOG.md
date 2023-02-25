@@ -7,7 +7,8 @@ CHANGE LOG
 * Dropped support for PHPUnit < 9
 * Add support for PHPUnit 10
 * `AnalysisTrait`'s `getPaths`, `getIgnored`, `shouldAnalyzeFile` and `provideFilesToCheck` are now static
-* Added return types to all methods
+* Added property and return types in all places
+* Use `private` and `final` where relevant
 
 
 #### V3.1.1 (25/02/2023)
