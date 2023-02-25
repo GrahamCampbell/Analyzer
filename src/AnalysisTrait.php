@@ -52,7 +52,7 @@ trait AnalysisTrait
      */
     public function testReferences(string $file): void
     {
-        $this->assertTrue(file_exists($file), "Expected {$file} to exist.");
+        static::assertTrue(file_exists($file), "Expected {$file} to exist.");
 
         $ignored = method_exists($this, 'getIgnored') ? static::getIgnored() : [];
 
@@ -61,7 +61,7 @@ trait AnalysisTrait
                 continue;
             }
 
-            $this->assertTrue(ClassInspector::inspect($class)->exists(), "Expected {$class} to exist.");
+            static::assertTrue(ClassInspector::inspect($class)->exists(), "Expected {$class} to exist.");
         }
     }
 
