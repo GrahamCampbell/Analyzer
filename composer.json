@@ -14,11 +14,11 @@
         "php": "^7.4.15 || ^8.0.2",
         "phpdocumentor/reflection-common": "^2.2",
         "phpdocumentor/reflection-docblock": "^5.3",
-        "phpdocumentor/type-resolver": "^1.6",
-        "nikic/php-parser": "^4.13"
+        "phpdocumentor/type-resolver": "^1.6.2",
+        "nikic/php-parser": "^4.15.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5.21"
+        "phpunit/phpunit": "^9.6.3 || ^10.0.12"
     },
     "suggest": {
         "phpunit/phpunit": "Required to use the analysis trait."
@@ -35,7 +35,5 @@
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }

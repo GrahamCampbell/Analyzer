@@ -70,7 +70,7 @@ trait AnalysisTrait
      *
      * @return string[][]
      */
-    public function provideFilesToCheck()
+    protected static function provideFilesToCheck()
     {
         $iterator = new AppendIterator();
 

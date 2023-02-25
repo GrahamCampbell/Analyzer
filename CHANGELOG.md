@@ -2,7 +2,14 @@ CHANGE LOG
 ==========
 
 
-## V3.1.1 (25/02/2023)
+## V4.0 (25/02/2023)
+
+* Dropped support for PHPUnit < 9
+* Add support for PHPUnit 10
+* `AnalysisTrait::provideFilesToCheck` is now protected and static
+
+
+#### V3.1.1 (25/02/2023)
 
 * Provisional PHP 8.2 support
 
