@@ -31,7 +31,7 @@ trait AnalysisTrait
      *
      * @return string[]
      */
-    abstract protected function getPaths();
+    abstract static protected function getPaths();
 
     /**
      * Determine if the given file should be analyzed.
@@ -40,7 +40,7 @@ trait AnalysisTrait
      *
      * @return bool
      */
-    protected function shouldAnalyzeFile(SplFileInfo $file)
+    protected static function shouldAnalyzeFile(SplFileInfo $file)
     {
         return true;
     }
@@ -54,7 +54,7 @@ trait AnalysisTrait
     {
         $this->assertTrue(file_exists($file), "Expected {$file} to exist.");
 
-        $ignored = method_exists($this, 'getIgnored') ? $this->getIgnored() : [];
+        $ignored = method_exists($this, 'getIgnored') ? static::getIgnored() : [];
 
         foreach ((new ReferenceAnalyzer())->analyze($file) as $class) {
             if (in_array($class, $ignored, true)) {
@@ -70,16 +70,16 @@ trait AnalysisTrait
      *
      * @return string[][]
      */
-    protected static function provideFilesToCheck()
+    public static function provideFilesToCheck()
     {
         $iterator = new AppendIterator();
 
-        foreach ($this->getPaths() as $path) {
+        foreach (static::getPaths() as $path) {
             $iterator->append(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path)));
         }
 
         $files = new CallbackFilterIterator($iterator, function ($file) {
-            return $file->getFilename()[0] !== '.' && !$file->isDir() && $this->shouldAnalyzeFile($file);
+            return $file->getFilename()[0] !== '.' && !$file->isDir() && static::shouldAnalyzeFile($file);
         });
 
         return array_map(function ($file) {

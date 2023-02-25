@@ -6,7 +6,7 @@ CHANGE LOG
 
 * Dropped support for PHPUnit < 9
 * Add support for PHPUnit 10
-* `AnalysisTrait::provideFilesToCheck` is now protected and static
+* `AnalysisTrait`'s `getPaths`, `getIgnored`, `shouldAnalyzeFile` and `provideFilesToCheck` are now static
 
 
 #### V3.1.1 (25/02/2023)
