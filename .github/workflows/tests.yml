@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        php: ['7.4', '8.0', '8.1']
+        php: ['7.4', '8.0', '8.1', '8.2']
 
     steps:
       - name: Checkout Code
@@ -23,6 +23,8 @@ jobs:
           php-version: ${{ matrix.php }}
           tools: composer:v2
           coverage: none
+        env:
+          update: true
 
       - name: Setup Problem Matchers
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"

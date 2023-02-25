@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.1.1 (UPCOMING)
+
+* Provisional PHP 8.2 support
+
+
 ## V3.1 (07/02/2022)
 
 * Dropped PHP < 7.4
