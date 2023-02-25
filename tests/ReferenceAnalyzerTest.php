@@ -18,21 +18,21 @@ use PHPUnit\Framework\TestCase;
 
 class ReferenceAnalyzerTest extends TestCase
 {
-    public function testCanGenerateRefs()
+    public function testCanGenerateRefs(): void
     {
         $refs = (new ReferenceAnalyzer())->analyze(__FILE__);
 
-        $this->assertSame([
+        self::assertSame([
             'GrahamCampbell\Analyzer\ReferenceAnalyzer',
             'PHPUnit\Framework\TestCase',
         ], $refs);
     }
 
-    public function testCanGenerateMoreRefs()
+    public function testCanGenerateMoreRefs(): void
     {
         $refs = (new ReferenceAnalyzer())->analyze(__DIR__.'/../src/ReferenceAnalyzer.php');
 
-        $this->assertSame([
+        self::assertSame([
             'PhpParser\NodeTraverser',
             'PhpParser\NodeVisitor\NameResolver',
             'PhpParser\Parser',
@@ -44,24 +44,24 @@ class ReferenceAnalyzerTest extends TestCase
         ], $refs);
     }
 
-    public function testCanGenerateUsingFuncStub()
+    public function testCanGenerateUsingFuncStub(): void
     {
         $refs = (new ReferenceAnalyzer())->analyze(__DIR__.'/stubs/func.php');
 
-        $this->assertSame([], $refs);
+        self::assertSame([], $refs);
     }
 
-    public function testCanGenerateUsingBoolStub()
+    public function testCanGenerateUsingBoolStub(): void
     {
         $refs = (new ReferenceAnalyzer())->analyze(__DIR__.'/stubs/bool.php');
 
-        $this->assertSame([], $refs);
+        self::assertSame([], $refs);
     }
 
-    public function testCanGenerateUsingEgStub()
+    public function testCanGenerateUsingEgStub(): void
     {
         $refs = (new ReferenceAnalyzer())->analyze(__DIR__.'/stubs/eg.php');
 
-        $this->assertSame(['Foo\\Baz', 'Foo\\Bar'], $refs);
+        self::assertSame(['Foo\\Baz', 'Foo\\Bar'], $refs);
     }
 }

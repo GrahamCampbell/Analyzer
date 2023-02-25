@@ -21,18 +21,18 @@ use PHPUnit\Framework\TestCase;
 
 class ClassInspectorTest extends TestCase
 {
-    public function testCanInspectClasses()
+    public function testCanInspectClasses(): void
     {
         $inspector = ClassInspector::inspect(static::class);
 
-        $this->assertInstanceOf(ClassInspector::class, $inspector);
+        self::assertInstanceOf(ClassInspector::class, $inspector);
 
-        $this->assertTrue($inspector->isClass());
-        $this->assertFalse($inspector->isInterface());
-        $this->assertFalse($inspector->isTrait());
-        $this->assertTrue($inspector->exists());
+        self::assertTrue($inspector->isClass());
+        self::assertFalse($inspector->isInterface());
+        self::assertFalse($inspector->isTrait());
+        self::assertTrue($inspector->exists());
 
-        $this->assertSame([
+        self::assertSame([
             'GrahamCampbell\Analyzer\AnalysisTrait',
             'GrahamCampbell\Analyzer\ClassInspector',
             'InvalidArgumentException',
@@ -41,32 +41,32 @@ class ClassInspectorTest extends TestCase
         ], $inspector->references());
     }
 
-    public function testCanInspectInterfaces()
+    public function testCanInspectInterfaces(): void
     {
         $inspector = ClassInspector::inspect(NodeTraverserInterface::class);
 
-        $this->assertInstanceOf(ClassInspector::class, $inspector);
+        self::assertInstanceOf(ClassInspector::class, $inspector);
 
-        $this->assertFalse($inspector->isClass());
-        $this->assertTrue($inspector->isInterface());
-        $this->assertFalse($inspector->isTrait());
-        $this->assertTrue($inspector->exists());
+        self::assertFalse($inspector->isClass());
+        self::assertTrue($inspector->isInterface());
+        self::assertFalse($inspector->isTrait());
+        self::assertTrue($inspector->exists());
 
-        $this->assertSame(['PhpParser\NodeVisitor', 'PhpParser\Node'], $inspector->references());
+        self::assertSame(['PhpParser\NodeVisitor', 'PhpParser\Node'], $inspector->references());
     }
 
-    public function testCanInspectTraits()
+    public function testCanInspectTraits(): void
     {
         $inspector = ClassInspector::inspect(AnalysisTrait::class);
 
-        $this->assertInstanceOf(ClassInspector::class, $inspector);
+        self::assertInstanceOf(ClassInspector::class, $inspector);
 
-        $this->assertFalse($inspector->isClass());
-        $this->assertFalse($inspector->isInterface());
-        $this->assertTrue($inspector->isTrait());
-        $this->assertTrue($inspector->exists());
+        self::assertFalse($inspector->isClass());
+        self::assertFalse($inspector->isInterface());
+        self::assertTrue($inspector->isTrait());
+        self::assertTrue($inspector->exists());
 
-        $this->assertSame([
+        self::assertSame([
             'AppendIterator',
             'CallbackFilterIterator',
             'RecursiveDirectoryIterator',
@@ -77,21 +77,21 @@ class ClassInspectorTest extends TestCase
         ], $inspector->references());
     }
 
-    public function testCanInspectNothing()
+    public function testCanInspectNothing(): void
     {
         $inspector = ClassInspector::inspect('foobarbaz');
 
-        $this->assertInstanceOf(ClassInspector::class, $inspector);
+        self::assertInstanceOf(ClassInspector::class, $inspector);
 
-        $this->assertFalse($inspector->isClass());
-        $this->assertFalse($inspector->isInterface());
-        $this->assertFalse($inspector->isTrait());
-        $this->assertFalse($inspector->exists());
+        self::assertFalse($inspector->isClass());
+        self::assertFalse($inspector->isInterface());
+        self::assertFalse($inspector->isTrait());
+        self::assertFalse($inspector->exists());
 
-        $this->assertSame([], $inspector->references());
+        self::assertSame([], $inspector->references());
     }
 
-    public function testCanNotInspectEmpty()
+    public function testCanNotInspectEmpty(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('The class name must be non-empty.');
