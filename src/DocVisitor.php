@@ -86,7 +86,7 @@ final class DocVisitor extends NodeVisitorAbstract
     /**
      * Create a new doc visitor instance.
      *
-     * @param \Closure(string): Context $context
+     * @param \Closure(string): Context           $context
      * @param \Closure(string, Context): DocBlock $phpdoc
      *
      * @return void
