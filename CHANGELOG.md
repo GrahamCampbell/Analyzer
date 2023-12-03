@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.0.1 (UPCOMING)
+
+* Provisional PHP 8.3 support
+
+
 ## V4.0 (25/02/2023)
 
 * Dropped support for PHPUnit < 9
@@ -11,7 +16,7 @@ CHANGE LOG
 * Use `private` and `final` where relevant
 
 
-#### V3.1.1 (25/02/2023)
+## V3.1.1 (25/02/2023)
 
 * Provisional PHP 8.2 support
 
