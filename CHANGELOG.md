@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V4.2 (12/01/2024)
+
+* Support PHP Parser v2
+* Provisional PHP 8.4 support
+
+
 ## V4.1 (03/12/2023)
 
 * Provisional PHP 8.3 support

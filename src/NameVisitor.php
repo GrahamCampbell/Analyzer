@@ -16,6 +16,7 @@ namespace GrahamCampbell\Analyzer;
 use PhpParser\Node;
 use PhpParser\Node\Expr\ConstFetch;
 use PhpParser\Node\Expr\FuncCall;
+use PhpParser\Node\Name;
 use PhpParser\Node\Name\FullyQualified;
 use PhpParser\NodeVisitorAbstract;
 
@@ -55,7 +56,7 @@ final class NameVisitor extends NodeVisitorAbstract
     public function enterNode(Node $node): Node
     {
         if ($node instanceof ConstFetch || $node instanceof FuncCall) {
-            $node->name = null;
+            $node->name = new Name(' ');
         }
 
         if ($node instanceof FullyQualified) {

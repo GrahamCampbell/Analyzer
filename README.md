@@ -15,12 +15,12 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 
 ## Installation
 
-This version requires [PHP](https://www.php.net/) 7.4-8.3 and supports [PHPUnit](https://phpunit.de/) 9-10.
+This version requires [PHP](https://www.php.net/) 7.4-8.4 and supports [PHPUnit](https://phpunit.de/) 9-10.
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer require "graham-campbell/analyzer:^4.1" --dev
+$ composer require "graham-campbell/analyzer:^4.2" --dev
 ```
 
 
