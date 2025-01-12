@@ -135,7 +135,7 @@ final class DocVisitor extends NodeVisitorAbstract
      *
      * @return void
      */
-    protected function resetContext(Name $namespace = null): void
+    protected function resetContext(?Name $namespace = null): void
     {
         $callable = $this->contextFactory;
 

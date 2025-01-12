@@ -39,7 +39,7 @@ final class ReferenceAnalyzer
      *
      * @return void
      */
-    public function __construct(Parser $parser = null)
+    public function __construct(?Parser $parser = null)
     {
         $this->parser = $parser ?? (new ParserFactory())->createForNewestSupportedVersion();
     }
