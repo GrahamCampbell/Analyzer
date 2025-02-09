@@ -17,13 +17,11 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 
 This version requires [PHP](https://www.php.net/) 8.1-8.4 and supports [PHPUnit](https://phpunit.de/) 10-12.
 
-| Analyzer | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         | PHPUnit 12         |
-|----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 1.1      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 2.4      | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
-| 3.1      | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
-| 4.2      | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:                | :x:                |
-| 5.0      | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Analyzer | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         | PHPUnit 12         |
+|----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 3.1      | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
+| 4.2      | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:                | :x:                |
+| 5.0      | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
