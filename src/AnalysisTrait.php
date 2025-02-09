@@ -49,7 +49,7 @@ trait AnalysisTrait
     /**
      * Test all class references exist.
      */
-    #[DataProvider('provideFilesToCheck')] 
+    #[DataProvider('provideFilesToCheck')]
     public function testReferences(string $file): void
     {
         static::assertTrue(file_exists($file), "Expected {$file} to exist.");
