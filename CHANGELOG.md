@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V5.0 (XX/02/2025)
+## V5.0 (09/02/2025)
 
 * Support only PHP 8.1-8.4
 * Support only PHPUnit 10-12
