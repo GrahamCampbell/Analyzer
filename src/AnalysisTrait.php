@@ -15,6 +15,7 @@ namespace GrahamCampbell\Analyzer;
 
 use AppendIterator;
 use CallbackFilterIterator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use SplFileInfo;
@@ -47,9 +48,8 @@ trait AnalysisTrait
 
     /**
      * Test all class references exist.
-     *
-     * @dataProvider provideFilesToCheck
      */
+    #[DataProvider('provideFilesToCheck')] 
     public function testReferences(string $file): void
     {
         static::assertTrue(file_exists($file), "Expected {$file} to exist.");

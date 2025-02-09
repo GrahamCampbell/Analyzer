@@ -69,6 +69,7 @@ class ClassInspectorTest extends TestCase
         self::assertSame([
             'AppendIterator',
             'CallbackFilterIterator',
+            'PHPUnit\Framework\Attributes\DataProvider',
             'RecursiveDirectoryIterator',
             'RecursiveIteratorIterator',
             'SplFileInfo',
