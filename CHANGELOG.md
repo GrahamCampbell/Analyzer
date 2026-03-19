@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V5.1 (UPCOMING)
+
+* Add PHP 8.5 support
+* Add PHPUnit 13 support
+
+
 ## V5.0 (09/02/2025)
 
 * Support only PHP 8.1-8.4

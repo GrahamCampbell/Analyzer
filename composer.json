@@ -12,13 +12,12 @@
     ],
     "require": {
         "php": "^8.1",
-        "phpdocumentor/reflection-common": "^2.2",
-        "phpdocumentor/reflection-docblock": "^5.6.1",
-        "phpdocumentor/type-resolver": "^1.10.0",
-        "nikic/php-parser": "^4.19.4 || ^5.4.0"
+        "phpdocumentor/reflection-docblock": "^5.6.7 || ^6.0.3",
+        "phpdocumentor/type-resolver": "^1.12.0 || ^2.0.0",
+        "nikic/php-parser": "^4.19.5 || ^5.7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5.45 || ^11.5.7 || ^12.0.2"
+        "phpunit/phpunit": "^10.5.63 || ^11.5.55 || ^12.5.14 || ^13.0.5"
     },
     "suggest": {
         "phpunit/phpunit": "Required to use the analysis trait."

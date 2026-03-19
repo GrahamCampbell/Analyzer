@@ -3,8 +3,8 @@
 namespace Foo;
 
 /**
- * @param array<Baz>
- * @param iterable<string>
+ * @param array<Baz> $baz
+ * @param iterable<string> $strs
  *
  * @return Bar[]
  */

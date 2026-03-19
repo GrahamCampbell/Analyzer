@@ -15,18 +15,18 @@ Analyzer was created by, and is maintained by [Graham Campbell](https://github.c
 
 ## Installation
 
-This version requires [PHP](https://www.php.net/) 8.1-8.4 and supports [PHPUnit](https://phpunit.de/) 10-12.
+This version requires [PHP](https://www.php.net/) 8.1-8.5 and supports [PHPUnit](https://phpunit.de/) 10-13.
 
-| Analyzer | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         | PHPUnit 12         |
-|----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 3.1      | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
-| 4.2      | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:                | :x:                |
-| 5.0      | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Analyzer | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         | PHPUnit 12         | PHPUnit 13         |
+|----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 3.1      | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| 4.2      | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
+| 5.1      | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer require "graham-campbell/analyzer:^5.0" --dev
+$ composer require "graham-campbell/analyzer:^5.1" --dev
 ```
 
 
