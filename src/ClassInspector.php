@@ -122,7 +122,13 @@ final class ClassInspector
     public function references(): array
     {
         if ($refector = $this->refector()) {
-            return (new ReferenceAnalyzer())->analyze($refector->getFileName());
+            $path = $refector->getFileName();
+
+            if ($path === false) {
+                return [];
+            }
+
+            return (new ReferenceAnalyzer())->analyze($path);
         } else {
             return [];
         }
